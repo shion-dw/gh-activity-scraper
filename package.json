@@ -1,0 +1,24 @@
+{
+  "name": "gh-activity-scraper",
+  "version": "1.0.0",
+  "description": "Tool to scrape GitHub activity records and aggregate the results",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "generate-summary": "ts-node src/generateSummaryHtml.ts",
+    "serve-summary": "serve activity-summary"
+  },
+  "dependencies": {
+    "puppeteer": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "serve": "^14.2.4",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.0.0"
+  },
+  "volta": {
+    "node": "22.14.0",
+    "yarn": "4.7.0"
+  }
+}
