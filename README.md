@@ -28,11 +28,6 @@ gh-activity-scraper は、Node.js と TypeScript を用いて開発された、G
    ```
 
 2. **依存関係のインストール：**
-   npm を使う場合:
-   ```bash
-   npm install
-   ```
-   Yarn を使う場合:
    ```bash
    yarn install
    ```
