@@ -1,10 +1,10 @@
 # gh-activity-scraper
 
-gh-activity-scraper は、Node.js と TypeScript を用いて開発された、GitHub 上での活動記録を自動で取得・集計・可視化するツールです。Puppeteer を利用して GitHub の画面をスクレイピングし、指定された期間ごとのプルリクエスト作成数、課題発行数、レビューしたプルリクエスト数などの主要な指標を集計します。その後、取得したデータは JSON として出力され、Chart.js を利用したインタラクティブな HTML レポート（折れ線グラフ付き）としても生成されます。
+gh-activity-scraper は、Node.js と TypeScript を用いて開発された、GitHub 上での活動記録を自動で取得・集計・可視化するツールです。Puppeteer を利用して GitHub の画面をスクレイピングし、指定された期間ごとの Pull Request 作成数、 Issue 発行数、レビューした Pull Request 数などの主要な指標を集計します。その後、取得したデータは JSON として出力され、Chart.js を利用したインタラクティブな HTML レポート（折れ線グラフ付き）としても生成されます。
 
 ## 特徴
 
-- **Puppeteer によるウェブスクレイピング**  
+- **Puppeteer による Web スクレイピング**  
   GitHub へのログイン（セッション cookie 管理付き）を自動化し、ブラウザを介してデータを取得します。
 
 - **柔軟な期間設定**  
@@ -57,24 +57,17 @@ gh-activity-scraper は、Node.js と TypeScript を用いて開発された、G
 
 ## 使い方
 
-### 1. スクレイピングの実行
+### 1. スクレイピングの実行および集計データを可視化した HTML の生成
 
-下記のコマンドを実行すると、GitHub へのログイン後、指定された期間の活動データがスクレイピングされ、`output/activity-summary.json` に集計結果が保存されます。
+下記コマンドを実行すると、GitHub へのログイン後、指定された期間の活動データがスクレイピングされ、`output/activity-summary.json` に集計結果が保存されます。  
+加えて、集計データを Chart.js を使った折れ線グラフで可視化した `output/index.html` が生成されます。
 ```bash
 yarn start
 ```
 
-### 2. HTML レポートの生成
+### 2. HTML レポートの表示
 
-集計データをもとに、インタラクティブな HTML レポートを生成します:
-```bash
-yarn generate-summary
-```
-このスクリプトにより、`output/index.html` が作成され、Chart.js を使った折れ線グラフが表示されます。
-
-### 3. HTML レポートの表示
-
-以下のコマンドで、`output` ディレクトリの内容をローカルサーバーで表示可能です:
+下記コマンドで、`output` ディレクトリの内容をローカルサーバーで表示可能です。:
 ```bash
 yarn serve-summary
 ```
@@ -84,13 +77,13 @@ yarn serve-summary
 ```
 gh-activity-scraper/
 ├── config.json                # GitHub URL と集計期間の設定ファイル
-├── cookies.json               # GitHub ログイン用のセッション cookie
+├── cookies.json               # GitHub ログイン用のセッション cookie 情報
 ├── package.json               # プロジェクト定義、スクリプト、依存関係
 ├── tsconfig.json              # TypeScript のコンパイラ設定
-├── .yarnrc.yml                # Yarn の設定（node_modules を使用）
+├── .yarnrc.yml                # Yarn の設定
 ├── output/                    # 成果物格納ディレクトリ
-│   ├── activity-summary.json  # 集計された GitHub 活動データ (JSON)
-│   └── index.html             # インタラクティブな HTML レポート
+│   ├── activity-summary.json  # 集計された GitHub 活動データ JSON
+│   └── index.html             # activity-summary.json の内容を Chart.js を使った折れ線グラフで可視化した HTML
 └── src/
     ├── index.ts               # Puppeteer によるメインのスクレイピング処理
     └── generateSummaryHtml.ts # JSON データから HTML レポートを生成するスクリプト

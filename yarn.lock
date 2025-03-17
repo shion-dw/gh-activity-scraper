@@ -699,9 +699,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"github-activity-scraper@workspace:.":
+"gh-activity-scraper@workspace:.":
   version: 0.0.0-use.local
-  resolution: "github-activity-scraper@workspace:."
+  resolution: "gh-activity-scraper@workspace:."
   dependencies:
     "@types/node": "npm:^18.0.0"
     puppeteer: "npm:^19.0.0"

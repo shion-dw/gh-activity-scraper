@@ -48,7 +48,7 @@ async function generateHtml() {
     new Chart(ctx, {
       type: 'line',
       data: {
-        labels: labels,
+        labels,
         datasets: [
           {
             label: 'Created Pull Requests',
@@ -76,7 +76,7 @@ async function generateHtml() {
             anchor: 'end',
             align: 'end',
             font: { size: 12 },
-            formatter: (value: number) => value.toString()
+            formatter: (value) => value.toString()
           }
         },
         scales: {

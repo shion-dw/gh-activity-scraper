@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node src/index.ts && npm run generate-summary",
     "generate-summary": "ts-node src/generateSummaryHtml.ts",
-    "serve-summary": "serve activity-summary"
+    "serve-summary": "serve output"
   },
   "dependencies": {
     "puppeteer": "^19.0.0"
