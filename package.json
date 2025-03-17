@@ -4,7 +4,7 @@
   "description": "Tool to scrape GitHub activity records and aggregate the results",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/index.ts && npm run generate-summary",
     "generate-summary": "ts-node src/generateSummaryHtml.ts",
     "serve-summary": "serve activity-summary"
   },
